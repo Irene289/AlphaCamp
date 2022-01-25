@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional"); 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #fff;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 0.9;
+}
+p {
+  margin: 0;
+}
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none; 
+}
+
+/* 設定區塊寬度一致並置中 */
+.container {
+  width: 85%;
+  margin: 0 auto 3rem auto;
+}
+
+/* Main Header */
+header {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: rgb(255, 255, 255, .96);
+  /*固定置頂*/
+  position: fixed;
+  z-index: 999;
+  top: 0px;
+}
+.header-brand {
+  width: 100%;
+  height: 60px;
+}
+.header-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 60px;
+  color: #000;
+  /*  flexbox  */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.header-logo img {
+  height: 60px;
+  padding: 10px;
+  margin: 0 5px;
+}
+.header-logo p {
+  white-space: nowrap;
+  margin: 0 5px;
+}
+.nav-category {
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 60px;
+}
+.nav-list {
+  width: 300px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  display: none;
+}
+.nav-link {
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.header-icons a {
+  color: #000;
+  font-size: 1.6rem;
+}
+.header-icons .fa-search,
+.header-icons .fa-heart,
+.header-icons .fa-shopping-bag {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.header-icons .fa-search {
+  left: calc(2% + 33px);
+}
+.header-icons .fa-heart {
+  right: calc(2% + 44px);
+}
+.header-icons .fa-shopping-bag {
+  right: 2%;
+}
+
+/* Basic T-shirts */
+.t-shirts-title {
+  letter-spacing: 1px;
+  padding: 100px 0 0 0;
+  text-align: center;
+}
+
+/* Filter */
+.filter-items {
+  /*  Grid  */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.filter-items select {
+  /*  Box  */
+  width: 40%;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+  
+  /*  Font  */
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+/* Album */
+.album-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+.card {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card-img {
+  display: block;
+  width: 100%;
+  /* 維持 1:1 讓照片保持正方形*/
+  aspect-ratio: 1/1;
+  /* 讓照片不變形*/
+  object-fit: cover;
+}
+.card-img-hover {
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  /* 維持 1:1 讓照片保持正方形*/
+  aspect-ratio: 1/1;
+  /* 讓照片不變形*/
+  object-fit: cover;
+}
+.card:hover .card-img-hover {
+  display: block;
+}
+.card-text {
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  font-size: .8rem;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card-price {
+  font-weight: 700;
+}
+.card-price-sold-out {
+  text-decoration: line-through;
+  font-weight: 500;
+}
+.sold-out {
+  font-weight: 500;
+}
+.card .fa-heart {
+  padding: 10px;
+  border-radius: 50%;
+  background: #fff;
+  /*  Position  */
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  z-index: 20;
+}
+
+/* Page */
+.page-number {
+  text-align: center;
+  margin: 100px;
+}
+
+/* Subscribe */
+.subscribe-wrapper {
+  width: 100%;
+  height: 250px;
+  background: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+}
+.subscribe-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  visibility: 0;
+}
+.subscribe-info {
+  width: 100%;
+  height: 250px;
+  
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 100px 10px auto;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  padding: 0 5%;
+}
+.subscribe-info .title {
+  line-height: 2rem;
+}
+.subscribe-form {
+  width: 80%;
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+}
+.subscribe-email {
+  width: 75%;
+  border-radius: 25px 0 0 25px;
+  border: 0px;
+  text-align: center;
+  font-size: 1rem;
+}
+.subscribe-submit {
+  width: 25%;
+  background: #000;
+  border-radius: 0 25px 25px 0;
+  border: 0px;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;  
+}
+.integrity-policy {
+  text-decoration: underline;
+}
+/* Footer */
+footer {
+  width: 100%;
+  background: #f0f0f0;
+  color: #2b2b2b;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
+/********* RWD *********/
+
+@media screen and (min-width: 608px) {
+  .filter-items {
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .filter-items select {
+    width: 150px;
+  }
+  .album-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .subscribe-wrapper {
+    background: none;
+    overflow: hidden;
+  }
+  .subscribe-image {
+    height: 100%;
+    visibility: 1;
+  }
+  .subscribe-form {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .header-logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  .nav-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .header-icons .fa-search {
+    left: calc(98% - 120px);
+    right: calc(2% + 120px);
+  }
+  .album-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

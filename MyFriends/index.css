@@ -1,0 +1,38 @@
+.fa-hand-spock {
+  font-size: 30px;
+}
+
+#card,
+img.img-fluid {
+  border-radius: 15px;
+  transition: .3s;
+}
+
+.card-btn {
+  /*  position  */
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  /*  扣掉自己本身佔有的空間  */
+  transform: translate(-50%, -50%);
+
+  /* other */
+  display: none;
+  opacity: 75%;
+}
+.btn-show-user, .btn-add-favorite {
+  margin: 5px;
+}
+.fa-heart {
+  font-size: 24px;
+  color: maroon;
+}
+.card:hover > img {
+  opacity: 75%;
+}
+.card:hover > .card-btn {
+  display: flex;
+}
+.card:hover > i {
+  display: block;
+}

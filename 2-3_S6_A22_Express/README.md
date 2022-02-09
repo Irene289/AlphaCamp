@@ -1,13 +1,13 @@
 # 2-3_S6_A22_Express
+![index](https://upload.cc/i1/2022/02/10/TU9lyY.png)
 
 ## Introduction
 AC 2-3 S6 A22: Express 基礎驗收
 
 ## Features
-* 未完成
+* 已完成
   * 已設定路由，點不同連結 URL 會動態改變
-  * 但 partial template 的 {{links.description}} 無法顯示
-  * 改為 {{links}} 則會顯示 [object Object],[object Object],[object Object],[object Object]
+  * 且會回傳不同的值到 partial template 中
 
 ## Start to Use
 1. Please confirm that both Node.js and npm are installed
